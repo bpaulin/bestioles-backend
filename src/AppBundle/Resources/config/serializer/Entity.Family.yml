@@ -1,0 +1,17 @@
+AppBundle\Entity\Family:
+    exclusion_policy: ALL
+    xml_root_name: family
+    properties:
+        id:
+            expose: true
+            type: integer
+            xml_attribute: true
+        name:
+            expose: true
+            type: string
+    relations:
+        - rel: self
+          href:
+                route: app_api_family_show
+                parameters:
+                    id: expr(object.getId())
